@@ -109,19 +109,24 @@ nav div, nav li, nav a, nav button {
     margin-inline: auto;
     width: min(90%);
 }
-
+.highlight-text {
+    font-size: 3.2rem; /* 7.5rem in laptop */
+    font-family: "margin_regular";
+    letter-spacing: 0.2rem;
+    color:var(--clr-highlight-text);
+}
 header {
     display: flex;
     padding: 3rem 10%; /* 13rem 15% in laptop */
 }
 
-.left {
+header .left {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.left .text {
+header .left .text {
     font-size: 3.2rem; /* 7.5rem in laptop */
     font-family: "margin_regular";
     letter-spacing: 0.2rem;
@@ -130,17 +135,17 @@ header {
     margin-block: 2rem; /* 5rem in laptop */
 }
 
-.left img {
+header .left img {
     width: 50%;
     border-radius: 5em;
 }
 
-.left .text name {
+header .left .text name {
     -webkit-text-stroke: 0;
     color:var(--clr-primary-text);
 }
 
-.left button {
+header .left button {
     font-family: "nexa_boldregular";
     letter-spacing: 0.1rem;
     width:fit-content;
@@ -154,11 +159,25 @@ header {
     transition: all 0.3s ease-in-out 0s;
 }
 
-.left button:hover {
-    background-color:rgba(247,74,160,0.8);
+header .left button:hover {
+    background-color:rgba(247,74,160,0.6);
 }
 
-.right {
+header .right {
+    display: none;
+}
+
+.about {
+    display:flex;
+    justify-content: start;
+    align-items:center;
+}
+
+.about .left .aboutme {
+    font-size: 1.25rem;
+}
+
+.about .right {
     display: none;
 }
 
@@ -167,40 +186,52 @@ header {
         display: flex;
         padding: 3rem 15%;
     }
-    .left {
+    header .left {
         display: inline-block;
         min-width: 50%;
     }
-    .left .text {
+    header .left .text {
         font-size: 5rem;
         margin-block-end: 3rem;
         margin-block-start: 0rem;
     }
-    .left img {
+    header .left img {
         min-width:20%;
         width: 30%;
         border-radius: 4em;
     }
 
-    .right {
+    header .right {
+        display: inline-block;
+    }
+ 
+    header .right img {
+        min-width: 70vh;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    section {
+        padding: 3rem 10%;
+    }
+
+    .about .left {
+        width: 65%;
+    }
+
+    .about .right {
         display: inline-block;
     }
 
- 
-    .right img {
-        min-width: 70vh;
-        width: 100%;
-        padding-inline-end: 10%;
-    }
-
 @media (min-width: 90em) {
-    .left {
+    header .left {
         min-width: 60%;
     }
-    .left .text {
+    header .left .text {
         font-size: 7rem;
     }
-    .right img {
+    header .right img {
         padding-inline-end: 0%;
     }
     
