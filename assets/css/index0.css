@@ -184,7 +184,10 @@ header {
 
     .right {
         display: inline-block;
+        overflow:-moz-hidden-unscrollable
     }
+
+ 
     .right img {
         min-width: 70vh;
         width: 100%;
