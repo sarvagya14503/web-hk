@@ -127,7 +127,7 @@ header {
     letter-spacing: 0.2rem;
     -webkit-text-stroke: 1px var(--clr-primary-text);
     color: var(--clr-primary-background);
-    margin-block: 3rem; /* 5rem in laptop */
+    margin-block: 2rem; /* 5rem in laptop */
 }
 
 .left img {
@@ -165,31 +165,45 @@ header {
 @media (min-width:64em) {
     header {
         display: flex;
-        padding: 5rem 15%;
-        gap: -10%;
+        padding: 3rem 15%;
     }
     .left {
         display: inline-block;
-        min-width: 65%;
+        min-width: 50%;
     }
     .left .text {
         font-size: 5rem;
         margin-block-end: 3rem;
+        margin-block-start: 0rem;
     }
     .left img {
         min-width:20%;
-        width: 40%;
+        width: 30%;
         border-radius: 4em;
     }
 
     .right {
         display: inline-block;
-        overflow:-moz-hidden-unscrollable
     }
 
  
     .right img {
         min-width: 70vh;
         width: 100%;
+        padding-inline-end: 10%;
     }
+
+@media (min-width: 90em) {
+    .left {
+        min-width: 60%;
+    }
+    .left .text {
+        font-size: 7rem;
+    }
+    .right img {
+        padding-inline-end: 0%;
+    }
+    
 }
+}
+
