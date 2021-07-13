@@ -28,6 +28,7 @@
     --clr-highlight-text:#f74aa0;
     --clr-primary-text: #c5c5c5;
     --clr-primary-background: #1b1b1b;
+    --font-highlight: "margin_regular";
 }
 
 * {
@@ -36,7 +37,9 @@
     padding: 0;
     background-color:var(--clr-primary-background);
 }
-
+html {
+    scroll-behavior:smooth;
+}
 body {
     font-family: "nexa_lightregular";
     font-size: 1rem;
@@ -111,7 +114,7 @@ nav div, nav li, nav a, nav button {
 }
 .highlight-text {
     font-size: 3.2rem; /* 7.5rem in laptop */
-    font-family: "margin_regular";
+    font-family: var(--font-highlight);
     letter-spacing: 0.2rem;
     color:var(--clr-highlight-text);
 }
@@ -128,7 +131,7 @@ header .left {
 
 header .left .text {
     font-size: 3.2rem; /* 7.5rem in laptop */
-    font-family: "margin_regular";
+    font-family: var(--font-highlight);
     letter-spacing: 0.2rem;
     -webkit-text-stroke: 1px var(--clr-primary-text);
     color: var(--clr-primary-background);
@@ -181,6 +184,50 @@ header .right {
     display: none;
 }
 
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    
+}
+
+.section-br {
+    font-size: 4rem;
+}
+.gradient{
+    font-family: var(--font-highlight);
+    
+    background-color: var(--clr-highlight-text);
+    background: linear-gradient(90deg, rgba(247,74,160,1) 0%, rgba(190,141,231,1) 45%, rgba(0,212,255,1) 100%);
+    background-size: 300% 300%;
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    animation: gradient-move 15s ease infinite;
+}
+.inner-container {
+    padding: 0 4rem 4rem;
+    font-family: "nexa_boldregular";
+    font-size: 1.25rem;
+    color: var(--clr-primary-text)
+}
+
+.inner-container .honor-desc {
+    padding: 0 3rem;
+    list-style: none;
+    font-size: 1rem;
+    font-family: "nexa_lightregular";
+}
+
 @media (min-width:64em) {
     header {
         display: flex;
@@ -213,9 +260,11 @@ header .right {
     }
 
     section {
+        padding: 5rem 10% 12rem;
+    }
+    section-break {
         padding: 3rem 10%;
     }
-
     .about .left {
         width: 65%;
     }
@@ -223,6 +272,10 @@ header .right {
     .about .right {
         display: inline-block;
     }
+    .section-br {
+        font-size: 8rem;
+    }
+}
 
 @media (min-width: 90em) {
     header .left {
@@ -234,7 +287,11 @@ header .right {
     header .right img {
         padding-inline-end: 0%;
     }
+    .about .left {
+        width: 45%;
+    }
     
 }
-}
+
+
 
