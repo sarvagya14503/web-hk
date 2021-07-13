@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@font-face {
+    font-family: 'margin_regular';
+    src: url('fonts/margin_demo-webfont.woff2') format('woff2'),
+         url('fonts/margin_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa_boldregular';
+    src: url('fonts/nexa_bold-webfont.woff2') format('woff2'),
+         url('fonts/nexa_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa_lightregular';
+    src: url('fonts/nexa_light-webfont.woff2') format('woff2'),
+         url('fonts/nexa_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --clr-highlight-text:#f74aa0;
+    --clr-primary-text: #c5c5c5;
+    --clr-primary-background: #1b1b1b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color:var(--clr-primary-background);
+}
+
+body {
+    font-family: "nexa_lightregular";
+    font-size: 1rem;
+    color:var(--clr-primary-text);
+
+}
+
+body:after {
+    background-image: url(../images/bg_texture.png);
+    opacity: 0.2;
+    height: 100%;
+    width: 100%;
+}
+/*
+@keyframes grain {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-15%, 5%) }
+    30% { transform:translate(7%, -25%) }
+    40% { transform:translate(-5%, 25%) }
+    50% { transform:translate(-15%, 10%) }
+    60% { transform:translate(15%, 0%) }
+    70% { transform:translate(0%, 15%) }
+    80% { transform:translate(3%, 35%) }
+    90% { transform:translate(-10%, 10%) }
+  }
+  
+body:after {
+    animation: grain 8s steps(10) infinite;
+    background-image: url(../images/bg_texture.png);
+    height: 300%;
+    width: 300%;
+    content: "";
+    opacity: 0.1;
+    left: -50%;
+    top: -120%;
+    position: fixed;
+}
+*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    
+}
+nav div, nav li, nav a, nav button {
+    text-decoration: none;
+    color:var(--clr-primary-text);
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    display: inline-block;
+    padding: 0 1.4rem;
+}
+
+.nav-list li a {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-list li a:hover {
+    color: var(--clr-highlight-text)
+}
+
+.container {
+    margin-inline: auto;
+    width: min(90%);
+}
+
+header {
+    padding: 3rem 10%; /* 13rem 15% in laptop */
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left .text {
+    font-size: 3.2rem; /* 7.5rem in laptop */
+    font-family: "margin_regular";
+    letter-spacing: 0.2rem;
+    -webkit-text-stroke: 1px var(--clr-primary-text);
+    color: var(--clr-primary-background);
+    margin-block: 3rem; /* 5rem in laptop */
+}
+
+.left img {
+    width: 50%;
+    border-radius: 5em;
+}
+
+.left .text name {
+    -webkit-text-stroke: 0;
+    color:var(--clr-primary-text);
+}
+
+.left button {
+    font-family: "nexa_boldregular";
+    letter-spacing: 0.1rem;
+    width:fit-content;
+    font-size: 1rem;
+    padding: 0.6rem 2rem; 
+    color:white;
+    background-color: rgba(247,74,160,1);
+    border:none;
+    border-radius: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.left button:hover {
+    background-color:rgba(247,74,160,0.8);
+}
+
+.right {
+    display: none;
+}
+
+@media (min-width:64em) {
+    header {
+        display: flex;
+        padding: 7rem 15%;
+    }
+    .left {
+        display: block;
+        align-items: left;
+    }
+    .left .text {
+        font-size: 7.5rem;
+        margin-block-end: 3rem;
+    }
+    .left img {
+        width: 20%;
+        border-radius: 4em;
+    }
+
+    .right {
+        display: block;
+    }
+}
